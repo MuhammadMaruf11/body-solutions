@@ -15,3 +15,292 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@keyframes pulseBounce {
+  0% {
+    transform: scale(1);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: scale(1.25);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: scale(1.2);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: scale(1.25);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: scale(1);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: scale(1.05);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: scale(1);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: scale(1);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.animate-pulse-bounce {
+  animation: pulseBounce 4s infinite 0s;
+}
+
+@keyframes rotate45 {
+  0%,
+  100% {
+    transform: rotate(0deg);
+    animation-timing-function: steps(2, end);
+  }
+  50% {
+    transform: rotate(45deg);
+    animation-timing-function: steps(2, start);
+  }
+}
+
+.animate-rotate-45 {
+  animation: rotate45 2s ease-in-out infinite alternate;
+}
+
+@keyframes rotate15 {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: rotate(7.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: rotate(5deg);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: rotate(7.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: rotate(2.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.animate-rotate-15 {
+  animation: rotate15 4s infinite 0s;
+}
+
+@keyframes to-top-animation {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: translateY(-10px);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: translateY(-7.5px);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: translateY(-10px);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: translateY(-2.5px);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.to-top-animation {
+  animation: to-top-animation 4s infinite;
+}
+
+@keyframes to-top-animation-full {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: translateY(-20px);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: translateY(-17.5px);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: translateY(-20px);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: translateY(-2.5px);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.to-top-animation-full {
+  animation: to-top-animation-full 4s infinite;
+}
+
+@keyframes to-bottom-animation {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: translateY(20px);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: translateY(17.5px);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: translateY(20px);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: translateY(2.5px);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.to-bottom-animation {
+  animation: to-bottom-animation 4s infinite;
+}
+
+@keyframes to-right-animation {
+  0% {
+    transform: translateX(0);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: translateX(30px);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: translateX(27.5px);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: translateX(30px);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: translateX(0);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: translateX(2.5px);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: translateX(0);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: translateX(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.to-right-animation {
+  animation: to-right-animation 4s infinite 0s;
+}
+
+@keyframes bounce-steps {
+  0% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  20% {
+    transform: translateY(20px);
+    animation-timing-function: steps(1, end);
+  }
+  30% {
+    transform: translateY(17.5px);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: translateY(20px);
+    animation-timing-function: steps(1, end);
+  }
+  60% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  70% {
+    transform: translateY(2.5px);
+    animation-timing-function: steps(1, end);
+  }
+  80% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: translateY(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.bounce-steps {
+  animation: bounce-steps 4s infinite 0s;
+}

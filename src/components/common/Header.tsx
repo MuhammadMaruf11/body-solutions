@@ -2,7 +2,7 @@
 
 const Header = () => {
     return (
-        <header className="bg-[#FEEDBC] text-white py-15">
+        <header className="py-15">
             <div className="container mx-auto bg-white py-4 rounded-full relative text-center">
                 <div className="inline-block">
                     <img src="/img/logo/logo.png" alt="logo" />
