@@ -21,28 +21,24 @@
     transform: scale(1);
     animation-timing-function: steps(1, end);
   }
-  20% {
-    transform: scale(1.25);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: scale(1.2);
-    animation-timing-function: steps(1, end);
-  }
   40% {
     transform: scale(1.25);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: scale(1.2);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: scale(1.25);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: scale(1);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: scale(1.05);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: scale(1);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -52,7 +48,43 @@
 }
 
 .animate-pulse-bounce {
-  animation: pulseBounce 4s infinite 0s;
+  animation: pulseBounce 2.5s infinite 0s;
+}
+
+@keyframes pulseBounceSmall {
+  0% {
+    transform: scale(1.1);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: scale(1);
+    animation-timing-function: steps(1, end);
+  }
+  45% {
+    transform: scale(1.05);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: scale(1);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
+    transform: scale(1.1);
+    animation-timing-function: steps(1, end);
+  }
+  95% {
+    transform: scale(1.05);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: scale(1.1);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.animate-pulse-bounce-small {
+  animation: pulseBounceSmall 2.5s infinite 0s;
+  transform: scale(1.1);
 }
 
 @keyframes rotate45 {
@@ -76,28 +108,24 @@
     transform: rotate(0);
     animation-timing-function: steps(1, end);
   }
-  20% {
-    transform: rotate(7.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: rotate(5deg);
-    animation-timing-function: steps(1, end);
-  }
   40% {
     transform: rotate(7.5deg);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: rotate(5deg);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: rotate(7.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: rotate(0);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: rotate(2.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: rotate(0);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -107,7 +135,42 @@
 }
 
 .animate-rotate-15 {
-  animation: rotate15 4s infinite 0s;
+  animation: rotate15 2.5s infinite 0s;
+}
+
+@keyframes rotate345 {
+  0% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+  40% {
+    transform: rotate(-7.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  45% {
+    transform: rotate(-5deg);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: rotate(-7.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+  95% {
+    transform: rotate(-2.5deg);
+    animation-timing-function: steps(1, end);
+  }
+  100% {
+    transform: rotate(0);
+    animation-timing-function: steps(1, end);
+  }
+}
+
+.animate-rotate-345 {
+  animation: rotate345 2.5s infinite 0s;
 }
 
 @keyframes to-top-animation {
@@ -115,28 +178,24 @@
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  20% {
-    transform: translateY(-10px);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: translateY(-7.5px);
-    animation-timing-function: steps(1, end);
-  }
   40% {
     transform: translateY(-10px);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: translateY(-7.5px);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: translateY(-10px);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: translateY(-2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -146,7 +205,7 @@
 }
 
 .to-top-animation {
-  animation: to-top-animation 4s infinite;
+  animation: to-top-animation 2.5s infinite;
 }
 
 @keyframes to-top-animation-full {
@@ -154,28 +213,24 @@
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  20% {
-    transform: translateY(-20px);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: translateY(-17.5px);
-    animation-timing-function: steps(1, end);
-  }
   40% {
     transform: translateY(-20px);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: translateY(-17.5px);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: translateY(-20px);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: translateY(-2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -185,7 +240,7 @@
 }
 
 .to-top-animation-full {
-  animation: to-top-animation-full 4s infinite;
+  animation: to-top-animation-full 2.5s infinite;
 }
 
 @keyframes to-bottom-animation {
@@ -193,28 +248,24 @@
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  20% {
-    transform: translateY(20px);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: translateY(17.5px);
-    animation-timing-function: steps(1, end);
-  }
   40% {
     transform: translateY(20px);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: translateY(17.5px);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: translateY(20px);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: translateY(2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -224,7 +275,7 @@
 }
 
 .to-bottom-animation {
-  animation: to-bottom-animation 4s infinite;
+  animation: to-bottom-animation 2.5s infinite;
 }
 
 @keyframes to-right-animation {
@@ -232,28 +283,24 @@
     transform: translateX(0);
     animation-timing-function: steps(1, end);
   }
-  20% {
-    transform: translateX(30px);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: translateX(27.5px);
-    animation-timing-function: steps(1, end);
-  }
   40% {
     transform: translateX(30px);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: translateX(27.5px);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: translateX(30px);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: translateX(0);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: translateX(2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: translateX(0);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -263,36 +310,32 @@
 }
 
 .to-right-animation {
-  animation: to-right-animation 4s infinite 0s;
+  animation: to-right-animation 2.5s infinite 0s;
 }
 
-@keyframes bounce-steps {
+@keyframes to-bottom-animation {
   0% {
     transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  20% {
-    transform: translateY(20px);
-    animation-timing-function: steps(1, end);
-  }
-  30% {
-    transform: translateY(17.5px);
     animation-timing-function: steps(1, end);
   }
   40% {
     transform: translateY(20px);
     animation-timing-function: steps(1, end);
   }
-  60% {
+  45% {
+    transform: translateY(17.5px);
+    animation-timing-function: steps(1, end);
+  }
+  50% {
+    transform: translateY(20px);
+    animation-timing-function: steps(1, end);
+  }
+  90% {
     transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
-  70% {
+  95% {
     transform: translateY(2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  80% {
-    transform: translateY(0);
     animation-timing-function: steps(1, end);
   }
   100% {
@@ -301,6 +344,79 @@
   }
 }
 
-.bounce-steps {
-  animation: bounce-steps 4s infinite 0s;
+.to-bottom-animation {
+  animation: to-bottom-animation 2.5s infinite 0s;
+}
+
+.group:hover .absolute.-left-1 {
+  animation: bounceIn 0.3s forwards;
+}
+.group:not(:hover) .absolute.-left-1 {
+  animation: bounceOut 0.3s forwards;
+}
+@keyframes bounceIn {
+  0% {
+    transform: translateY(10%);
+  }
+  50% {
+    transform: translateY(-10%);
+  }
+  70% {
+    transform: translateY(10%);
+  }
+  100% {
+    transform: translateY(-10%);
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: translateY(-10%);
+  }
+  50% {
+    transform: translateY(10%);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(10%);
+  }
+}
+
+.group:hover .absolute.left-0 {
+  animation: bounceI 0.3s forwards;
+}
+.group:not(:hover) .absolute.left-0 {
+  animation: bounceO 0.3s forwards;
+}
+
+@keyframes bounceI {
+  0% {
+    transform: translateY(15%);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+  70% {
+    transform: translateY(15%);
+  }
+  100% {
+    transform: translateY(-5%);
+  }
+}
+
+@keyframes bounceO {
+  0% {
+    transform: translateY(-5%);
+  }
+  50% {
+    transform: translateY(15%);
+  }
+  70% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(15%);
+  }
 }

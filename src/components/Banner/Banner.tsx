@@ -1,36 +1,55 @@
+import { useEffect, useRef } from "react";
 import Button from "../ui/Button"
+import Typed from "typed.js";
 
 
 const Banner = () => {
+
+    const el = useRef(null);
+
+    useEffect(() => {
+        new Typed(el.current, {
+            strings: ['Tristique.'],
+            typeSpeed: 50,
+            loop: true,
+            backSpeed: 50,
+            backDelay: 1000,
+            startDelay: 1000,
+            cursorChar: '|',
+            smartBackspace: true,
+        });
+        return () => { };
+    }, []);
+
     return (
         <section className="container mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="ps-24">
-                    <h5 className="text-[#f9b800] uppercase text-2xl font-bold">risus praesent vulputate. </h5>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                <div className="ps-16">
+                    <h5 className="text-[#f9b800] uppercase text-3xl font-bold">risus praesent vulputate. </h5>
                     <h1 className="text-7xl font-bold leading-20 mb-15">Cursus Integer
-                        Consequat Tristique.</h1>
+                        Consequat  <span ref={el} /></h1>
                     <ul className="flex flex-wrap gap-3.5 mb-15">
-                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full">
+                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
                             <img src="/img/icons/check_circle.svg" alt="icon" />
                             <span>Cursus Integer</span>
                         </li>
-                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full">
+                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
                             <img src="/img/icons/check_circle.svg" alt="icon" />
                             <span>Integer Consequat </span>
                         </li>
-                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full">
+                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
                             <img src="/img/icons/check_circle.svg" alt="icon" />
                             <span>Tellus Euismod Pellentesque</span>
                         </li>
-                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full">
+                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
                             <img src="/img/icons/check_circle.svg" alt="icon" />
                             <span>Aliquot Tristique</span>
                         </li>
-                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full">
+                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
                             <img src="/img/icons/check_circle.svg" alt="icon" />
                             <span>Pellentesque Tempus</span>
                         </li>
-                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full">
+                        <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
                             <img src="/img/icons/check_circle.svg" alt="icon" />
                             <span>Mauris Fermentum Praesent</span>
                         </li>
@@ -39,7 +58,7 @@ const Banner = () => {
                         label="Lorem Ipsum"
                         bgColor="#f9b800"
                         textColor="#262626"
-                        shadowColor="black"
+                        shadowColor="#262626"
                         width="350px"
                     />
                 </div>
@@ -50,13 +69,13 @@ const Banner = () => {
                     <div className="absolute top-43 z-2 left-91 animate-pulse-bounce">
                         <img src="/img/banner/circle.png" alt="banner" />
                     </div>
-                    <div className="absolute bottom-39 left-23 z-2 animate-pulse-bounce">
+                    <div className="absolute bottom-39 left-23 z-2 animate-pulse-bounce-small">
                         <img src="/img/banner/circle-medium.png" alt="banner" />
                     </div>
-                    <div className="absolute bottom-34 left-19 z-2 animate-pulse-bounce">
+                    <div className="absolute bottom-34 left-19 z-2 animate-pulse-bounce-small">
                         <img src="/img/banner/circle-small.png" alt="banner" />
                     </div>
-                    <div className="absolute top-80 z-2 right-79 animate-rotate-45">
+                    <div className="absolute top-80 z-2 right-79 animate-rotate-15">
                         <img src="/img/banner/ear-ring.png" alt="banner" />
                     </div>
                     <div className="absolute top-80 z-2 left-88 animate-rotate-15">
@@ -77,7 +96,7 @@ const Banner = () => {
                     <div className="absolute top-65 z-2 right-7 to-right-animation">
                         <img src="/img/banner/img-2.png" alt="banner" />
                     </div>
-                    <div className="absolute bottom-60 z-2 right-20 bounce-steps">
+                    <div className="absolute bottom-60 z-2 right-20 to-bottom-animation">
                         <img src="/img/banner/img-3.png" alt="banner" />
                     </div>
                     <div className="absolute bottom-32 right-56 z-2 to-top-animation">
