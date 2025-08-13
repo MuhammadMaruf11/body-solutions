@@ -2,16 +2,16 @@
 
 const Testimonial = () => {
     return (
-        <section className="bg-linear-to-br from-50% to-50% from-[#262626] to-[#f9b800]">
+        <section className="bg-linear-to-br px-3 from-50% to-50% from-[#262626] to-[#f9b800]">
             <div className="container mx-auto">
-                <div className=" bg-white 2xl:py-25 2xl:px-34 xl:py-20 xl:px-30 rounded-[75px] group relative overflow-hidden">
+                <div className=" bg-white 2xl:py-25 2xl:px-34 xl:py-20 xl:px-30 lg:py-8 lg:px-12 xl:rounded-[75px] lg:rounded-[50px] group relative overflow-hidden">
                     <div className="grid grid-cols-12 gap-20 items-center relative z-10">
                         <div className="col-span-5">
                             <img src="/img/testimonial/client-pp.png" alt="client_pp" />
                         </div>
                         <div className="col-span-7 group-hover:text-white transition-colors duration-300">
-                            <h4 className="text-5xl mb-10">What our customers thought?</h4>
-                            <h5 className="text-2xl mb-5">Euismod magna id purus eget nunc ligula suspendisse dui netus. Condimentum blandit rutrum at mauris enim pulvinar duis etiam duis. </h5>
+                            <h4 className="xl:text-5xl lg:text-4xl xl:mb-10 lg:mb-6">What our customers thought?</h4>
+                            <h5 className="xl:text-2xl lg:text-xl mb-5">Euismod magna id purus eget nunc ligula suspendisse dui netus. Condimentum blandit rutrum at mauris enim pulvinar duis etiam duis. </h5>
                             <button className="group-hover:text-[#f9b800] text-xl mb-10">Holly Davidson</button>
                             <div className="flex gap-10 items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="40" height="17" viewBox="0 0 40 17" fill="none">
