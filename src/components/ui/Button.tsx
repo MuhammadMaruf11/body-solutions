@@ -6,17 +6,15 @@ const Button: FC<ButtonProps> = ({
     bgColor,
     textColor,
     shadowColor,
-    width,
 }) => {
     return (
         <button
             style={{
                 '--bg-color': bgColor,
                 '--text-color': textColor,
-                '--width': width,
                 '--shadow-color': shadowColor,
             } as React.CSSProperties}
-            className="bg-[var(--bg-color)] text-[var(--text-color)] w-[var(--width)] group flex items-center justify-between px-12.5 py-5.5 text-2xl font-bold rounded-full transition-all duration-300 border border-transparent hover:border-[var(--shadow-color)] hover:shadow-[8px_8px_0_var(--shadow-color)]"
+            className="bg-[var(--bg-color)] text-[var(--text-color)] 2xl:w-87.5 xl:w-75 lg:w-50 md:w-25 w-full group flex items-center justify-between 2xl:px-12.5 lg:px-10 px-5 2xl:py-5.5 lg:py-3 py-2 text-2xl font-bold rounded-full transition-all duration-300 border border-transparent hover:border-[var(--shadow-color)] hover:shadow-[8px_8px_0_var(--shadow-color)]"
         >
             <span>{label}</span>
             <svg className="transition-transform duration-300 group-hover:rotate-90" xmlns="http://www.w3.org/2000/svg" width="26" height="18" viewBox="0 0 26 18" fill="none">

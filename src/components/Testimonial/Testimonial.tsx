@@ -4,7 +4,7 @@ const Testimonial = () => {
     return (
         <section className="bg-linear-to-br from-50% to-50% from-[#262626] to-[#f9b800]">
             <div className="container mx-auto">
-                <div className=" bg-white py-25 px-34 rounded-[75px] group relative overflow-hidden">
+                <div className=" bg-white 2xl:py-25 2xl:px-34 xl:py-20 xl:px-30 rounded-[75px] group relative overflow-hidden">
                     <div className="grid grid-cols-12 gap-20 items-center relative z-10">
                         <div className="col-span-5">
                             <img src="/img/testimonial/client-pp.png" alt="client_pp" />

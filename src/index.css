@@ -354,33 +354,68 @@
 .group:not(:hover) .absolute.-left-1 {
   animation: bounceOut 0.3s forwards;
 }
-@keyframes bounceIn {
-  0% {
-    transform: translateY(10%);
+
+@media screen and (min-width: 1600px) {
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(10%);
+    }
+    50% {
+      transform: translateY(-10%);
+    }
+    70% {
+      transform: translateY(10%);
+    }
+    100% {
+      transform: translateY(-10%);
+    }
   }
-  50% {
-    transform: translateY(-10%);
-  }
-  70% {
-    transform: translateY(10%);
-  }
-  100% {
-    transform: translateY(-10%);
+
+  @keyframes bounceOut {
+    0% {
+      transform: translateY(-10%);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    70% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
   }
 }
 
-@keyframes bounceOut {
-  0% {
-    transform: translateY(-10%);
+@media screen and (max-width: 1599px) and (min-width: 1200px) {
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(10%);
+    }
+    50% {
+      transform: translateY(-70%);
+    }
+    70% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(-70%);
+    }
   }
-  50% {
-    transform: translateY(10%);
-  }
-  70% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(10%);
+
+  @keyframes bounceOut {
+    0% {
+      transform: translateY(-70%);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    70% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
   }
 }
 
@@ -391,32 +426,66 @@
   animation: bounceO 0.3s forwards;
 }
 
-@keyframes bounceI {
-  0% {
-    transform: translateY(15%);
+@media screen and (min-width: 1600px) {
+  @keyframes bounceI {
+    0% {
+      transform: translateY(15%);
+    }
+    50% {
+      transform: translateY(-25%);
+    }
+    70% {
+      transform: translateY(15%);
+    }
+    100% {
+      transform: translateY(-5%);
+    }
   }
-  50% {
-    transform: translateY(-25%);
-  }
-  70% {
-    transform: translateY(15%);
-  }
-  100% {
-    transform: translateY(-5%);
+
+  @keyframes bounceO {
+    0% {
+      transform: translateY(-5%);
+    }
+    50% {
+      transform: translateY(15%);
+    }
+    70% {
+      transform: translateY(0%);
+    }
+    100% {
+      transform: translateY(15%);
+    }
   }
 }
 
-@keyframes bounceO {
-  0% {
-    transform: translateY(-5%);
+@media screen and (max-width: 1599px) and (min-width: 1200px) {
+  @keyframes bounceI {
+    0% {
+      transform: translateY(20%);
+    }
+    50% {
+      transform: translateY(-85%);
+    }
+    70% {
+      transform: translateY(-60%);
+    }
+    100% {
+      transform: translateY(-85%);
+    }
   }
-  50% {
-    transform: translateY(15%);
-  }
-  70% {
-    transform: translateY(0%);
-  }
-  100% {
-    transform: translateY(15%);
+
+  @keyframes bounceO {
+    0% {
+      transform: translateY(-85%);
+    }
+    50% {
+      transform: translateY(20%);
+    }
+    70% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(20%);
+    }
   }
 }

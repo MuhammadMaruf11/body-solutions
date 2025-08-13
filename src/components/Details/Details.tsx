@@ -7,30 +7,30 @@ const Details = () => {
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
                     <div className="ps-16">
-                        <h4 className="text-5xl leading-15 mb-15">Cursus Integer <br />
+                        <h4 className="2xl:text-5xl lg:text-4xl 2xl:leading-15 2xl:mb-15 xl:mb-10">Cursus Integer <br />
                             consequat Tristique.</h4>
-                        <ul className="flex flex-wrap gap-3.5 mb-15">
-                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
+                        <ul className="flex flex-wrap gap-3.5 2xl:mb-15 xl:mb-10 2xl:text-xl lg:">
+                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full ">
                                 <img src="/img/icons/check_circle.svg" alt="icon" />
                                 <span>Ac viverra sed risus praesent vulputate. </span>
                             </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
+                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full ">
                                 <img src="/img/icons/check_circle.svg" alt="icon" />
                                 <span>Natoqu consectetur pulvinar. </span>
                             </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
+                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full ">
                                 <img src="/img/icons/check_circle.svg" alt="icon" />
                                 <span>Sollicitudin ornare tempus nulla varius pulvinar.</span>
                             </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
+                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full ">
                                 <img src="/img/icons/check_circle.svg" alt="icon" />
                                 <span>Varius pulvinar</span>
                             </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
+                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full ">
                                 <img src="/img/icons/check_circle.svg" alt="icon" />
                                 <span>Natoque id tellus consectetur</span>
                             </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full text-xl">
+                            <li className="flex items-center gap-2 bg-white ps-3 pe-6 py-3 rounded-full ">
                                 <img src="/img/icons/check_circle.svg" alt="icon" />
                                 <span>Vulputate et vulputate suspendisse</span>
                             </li>
@@ -40,7 +40,6 @@ const Details = () => {
                             bgColor="#262626"
                             textColor="#fff"
                             shadowColor="#fff"
-                            width="350px"
                         />
                     </div>
                     <div className="relative">
