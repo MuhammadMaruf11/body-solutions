@@ -2,10 +2,10 @@ import Button from "../ui/Button"
 
 const Footer = () => {
     return (
-        <footer className="xl:py-22.5 lg:py-12 px-3">
+        <footer className="xl:py-22.5 py-12.5 px-3">
             <div className="container mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center xl:mb-22.5 lg:mb-12">
-                    <h4 className="2xl:text-5xl xl:text-4xl lg:text-3xl 2xl:leading-15 font-bold">Vulputate et pulvinar ethre Suspendisse tellus consecteur</h4>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center xl:mb-22.5 lg:mb-12 md:mb-6">
+                    <h4 className="2xl:text-5xl xl:text-4xl lg:text-3xl md:text-2xl 2xl:leading-15 font-bold">Vulputate et pulvinar ethre Suspendisse tellus consecteur</h4>
                     <div className="ms-auto">
                         <Button
                             label="Lorem Ipsum"

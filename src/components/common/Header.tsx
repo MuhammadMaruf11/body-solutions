@@ -1,7 +1,7 @@
 const Header = () => {
     return (
         <header className="xl:py-15 lg:py-6 py-12.5 px-3">
-            <div className="container mx-auto bg-white py-2 rounded-full relative text-center">
+            <div className="container mx-auto bg-white py-2 rounded-full relative lg:text-center">
                 <div className="inline-block">
                     <img src="/img/logo/logo.png" alt="logo" />
                 </div>

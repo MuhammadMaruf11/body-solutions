@@ -3,7 +3,7 @@ import Button from "../ui/Button"
 
 const Service = () => {
     return (
-        <section className="bg-[#262626] px-3 2xl:pt-100 xl:pt-80 2xl:pb-50 xl:pb-40 lg:pt-60 lg:pb-30 md:pt-80 md:pb-30 [clip-path:polygon(0_25%,100%_0%,100%_100%,0%_100%)]">
+        <section className="bg-[#262626] px-3 2xl:pt-100 xl:pt-80 2xl:pb-50 xl:pb-40 lg:pt-60 lg:pb-30 md:pt-60 md:pb-30 lg:[clip-path:polygon(0_25%,100%_0%,100%_100%,0%_100%)] md:[clip-path:polygon(0_15%,100%_0%,100%_100%,0%_100%)]">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                     <div className="xl:ps-16 lg:ps-8">
@@ -24,7 +24,7 @@ const Service = () => {
                     </div>
                     <div className="grid grid-cols-12 2xl:gap-15 xl:gap-8 md:gap-3">
                         <div className="col-span-6 flex flex-col 2xl:gap-15 xl:gap-8 md:gap-3 ">
-                            <div className="xl:p-12.5 p-8 bg-white xl:rounded-[75px] lg:rounded-[50px] rounded-4xl  relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)]">
+                            <div className="xl:p-12.5 p-8 bg-white xl:rounded-[75px] lg:rounded-[50px] rounded-4xl  relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)] delay-bg-change overflow-hidden">
                                 <div className="relative z-2 group-hover:text-white transition-colors duration-300">
                                     <div className="2xl:mb-10 xl:mb-6 lg:mb-4 mb-8">
                                         <img src="/img/services/icon-1.png" width={50} height={50} alt="icon" />
@@ -40,7 +40,7 @@ const Service = () => {
                                     <img className="w-full h-full object-cover" src="/img/services/card-bg.png" alt="bg" />
                                 </div>
                             </div>
-                            <div className="xl:p-12.5 p-8 bg-[#f0b800] xl:rounded-[75px] lg:rounded-[50px] rounded-4xl relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)]">
+                            <div className="xl:p-12.5 p-8 bg-[#f0b800] xl:rounded-[75px] lg:rounded-[50px] rounded-4xl relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)] delay-bg-change overflow-hidden">
                                 <div className="relative z-2 group-hover:text-white transition-colors duration-300">
                                     <div className="2xl:mb-10 xl:mb-6 lg:mb-4 mb-8">
                                         <img src="/img/services/icon-2.png" width={50} height={50} alt="icon" />
@@ -57,8 +57,8 @@ const Service = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="xl:mt-31 col-span-6 2xl:space-y-15 xl:space-y-8 md:space-y-3 ">
-                            <div className="xl:p-12.5 p-8 bg-[#f0b800] xl:rounded-[75px] lg:rounded-[50px] rounded-4xl relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)] overflow-hidden">
+                        <div className="xl:mt-31 col-span-6  flex flex-col 2xl:gap-15 xl:gap-8 md:gap-3  ">
+                            <div className="xl:p-12.5 p-8 bg-[#f0b800] xl:rounded-[75px] lg:rounded-[50px] rounded-4xl relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)] delay-bg-change overflow-hidden">
                                 <div className="relative z-2 group-hover:text-white transition-colors duration-300">
                                     <div className="2xl:mb-10 xl:mb-6 lg:mb-4 mb-8">
                                         <img src="/img/services/icon-3.png" width={50} height={50} alt="icon" />
@@ -75,7 +75,7 @@ const Service = () => {
                                 </div>
                             </div>
 
-                            <div className="xl:p-12.5 p-8 bg-white xl:rounded-[75px] lg:rounded-[50px] rounded-4xl relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)]">
+                            <div className="xl:p-12.5 p-8 bg-white xl:rounded-[75px] lg:rounded-[50px] rounded-4xl relative group shadow-[20px_20px_20px_rgba(0,0,0,0.1),-20px_-20px_20px_rgba(0,0,0,0.1)] delay-bg-change overflow-hidden">
                                 <div className="relative z-2 group-hover:text-white transition-colors duration-300">
                                     <div className="2xl:mb-10 xl:mb-6 lg:mb-4 mb-8">
                                         <img src="/img/services/icon-4.png" width={50} height={50} alt="icon" />

@@ -16,6 +16,8 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+
+
 @keyframes pulseBounce {
   0% {
     transform: scale(1);
@@ -595,6 +597,16 @@
     }
   }
 }
+
+   .delay-bg-change:hover {
+    animation: bgChange  0.5s forwards;
+  }
+
+  @keyframes bgChange {
+    to {
+      background-color: #262626;
+    }
+  }
 
 .group:hover .absolute.-left-1 {
   animation: bounceIn 0.3s forwards;
