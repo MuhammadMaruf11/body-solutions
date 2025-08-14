@@ -1,98 +1,129 @@
 @import url("https://fonts.cdnfonts.com/css/segoe-ui-4");
 @import "tailwindcss";
 
+/* Root Variables */
 :root {
-  font-family: "Segoe UI";
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --font-family: "Segoe UI";
+  --brand-yellow: #f9b800;
+  --brand-dark: #262626;
+  font-family: var(--font-family);
 }
 
 @theme {
-  --color-brand-yellow: #f9b800;
-  --color-brand-dark: #262626;
+  --color-brand-yellow: var(--brand-yellow);
+  --color-brand-dark: var(--brand-dark);
 }
 
-
-@keyframes pulseBounce {
+/* =====================
+   Generic Bounce Animation Template
+   ===================== */
+@keyframes bounce-template {
   0% {
-    transform: scale(1);
+    transform: var(--start);
     animation-timing-function: steps(1, end);
   }
   40% {
-    transform: scale(1.25);
+    transform: var(--mid1);
     animation-timing-function: steps(1, end);
   }
   45% {
-    transform: scale(1.2);
+    transform: var(--mid2);
     animation-timing-function: steps(1, end);
   }
   50% {
-    transform: scale(1.25);
+    transform: var(--mid1);
     animation-timing-function: steps(1, end);
   }
   90% {
-    transform: scale(1);
+    transform: var(--start);
     animation-timing-function: steps(1, end);
   }
   95% {
-    transform: scale(1.05);
+    transform: var(--mid3);
     animation-timing-function: steps(1, end);
   }
   100% {
-    transform: scale(1);
+    transform: var(--start);
     animation-timing-function: steps(1, end);
   }
 }
 
+/* =====================
+   Scale Variants
+   ===================== */
 .animate-pulse-bounce {
-  animation: pulseBounce 2.5s infinite 0s;
-}
-
-@keyframes pulseBounceSmall {
-  0% {
-    transform: scale(1.1);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: scale(1);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: scale(1.05);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: scale(1);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: scale(1.1);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: scale(1.05);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: scale(1.1);
-    animation-timing-function: steps(1, end);
-  }
+  --start: scale(1);
+  --mid1: scale(1.25);
+  --mid2: scale(1.2);
+  --mid3: scale(1.05);
+  animation: bounce-template 2.5s infinite;
 }
 
 .animate-pulse-bounce-small {
-  animation: pulseBounceSmall 2.5s infinite 0s;
-  transform: scale(1.1);
+  --start: scale(1.1);
+  --mid1: scale(1);
+  --mid2: scale(1.05);
+  --mid3: scale(1.05);
+  animation: bounce-template 2.5s infinite;
 }
 
+/* =====================
+   Rotation Variants
+   ===================== */
+.animate-rotate-15 {
+  --start: rotate(0deg);
+  --mid1: rotate(7.5deg);
+  --mid2: rotate(5deg);
+  --mid3: rotate(2.5deg);
+  animation: bounce-template 2.5s infinite;
+}
+
+.animate-rotate-345 {
+  --start: rotate(0deg);
+  --mid1: rotate(-7.5deg);
+  --mid2: rotate(-5deg);
+  --mid3: rotate(-2.5deg);
+  animation: bounce-template 2.5s infinite;
+}
+
+/* =====================
+   Translation Variants
+   ===================== */
+.to-top-animation {
+  --start: translateY(0);
+  --mid1: translateY(-10px);
+  --mid2: translateY(-7.5px);
+  --mid3: translateY(-2.5px);
+  animation: bounce-template 2.5s infinite;
+}
+
+.to-top-animation-full {
+  --start: translateY(0);
+  --mid1: translateY(-20px);
+  --mid2: translateY(-17.5px);
+  --mid3: translateY(-2.5px);
+  animation: bounce-template 2.5s infinite;
+}
+
+.to-bottom-animation {
+  --start: translateY(0);
+  --mid1: translateY(20px);
+  --mid2: translateY(17.5px);
+  --mid3: translateY(2.5px);
+  animation: bounce-template 2.5s infinite;
+}
+
+.to-right-animation {
+  --start: translateX(0);
+  --mid1: translateX(30px);
+  --mid2: translateX(27.5px);
+  --mid3: translateX(2.5px);
+  animation: bounce-template 2.5s infinite;
+}
+
+/* =====================
+   Simple Rotation 45° (Separate Keyframes)
+   ===================== */
 @keyframes rotate45 {
   0%,
   100% {
@@ -104,576 +135,25 @@
     animation-timing-function: steps(2, start);
   }
 }
-
 .animate-rotate-45 {
   animation: rotate45 2s ease-in-out infinite alternate;
 }
 
-@keyframes rotate15 {
-  0% {
-    transform: rotate(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: rotate(7.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: rotate(5deg);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: rotate(7.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: rotate(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: rotate(2.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: rotate(0);
-    animation-timing-function: steps(1, end);
+/* =====================
+   Hover Background Change
+   ===================== */
+.delay-bg-change:hover {
+  animation: bgChange 0.5s forwards;
+}
+@keyframes bgChange {
+  to {
+    background-color: var(--brand-dark);
   }
 }
 
-.animate-rotate-15 {
-  animation: rotate15 2.5s infinite 0s;
-}
-
-@keyframes rotate345 {
-  0% {
-    transform: rotate(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: rotate(-7.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: rotate(-5deg);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: rotate(-7.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: rotate(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: rotate(-2.5deg);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: rotate(0);
-    animation-timing-function: steps(1, end);
-  }
-}
-
-.animate-rotate-345 {
-  animation: rotate345 2.5s infinite 0s;
-}
-
-@keyframes to-top-animation {
-  0% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: translateY(-10px);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: translateY(-7.5px);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: translateY(-10px);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: translateY(-2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-}
-
-.to-top-animation {
-  animation: to-top-animation 2.5s infinite;
-}
-
-@keyframes to-top-animation-full {
-  0% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: translateY(-20px);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: translateY(-17.5px);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: translateY(-20px);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: translateY(-2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-}
-
-.to-top-animation-full {
-  animation: to-top-animation-full 2.5s infinite;
-}
-
-@keyframes to-bottom-animation {
-  0% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: translateY(20px);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: translateY(17.5px);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: translateY(20px);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: translateY(2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-}
-
-.to-bottom-animation {
-  animation: to-bottom-animation 2.5s infinite;
-}
-
-@keyframes to-right-animation {
-  0% {
-    transform: translateX(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: translateX(30px);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: translateX(27.5px);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: translateX(30px);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: translateX(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: translateX(2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: translateX(0);
-    animation-timing-function: steps(1, end);
-  }
-}
-
-.to-right-animation {
-  animation: to-right-animation 2.5s infinite 0s;
-}
-
-@keyframes to-bottom-animation {
-  0% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  40% {
-    transform: translateY(20px);
-    animation-timing-function: steps(1, end);
-  }
-  45% {
-    transform: translateY(17.5px);
-    animation-timing-function: steps(1, end);
-  }
-  50% {
-    transform: translateY(20px);
-    animation-timing-function: steps(1, end);
-  }
-  90% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-  95% {
-    transform: translateY(2.5px);
-    animation-timing-function: steps(1, end);
-  }
-  100% {
-    transform: translateY(0);
-    animation-timing-function: steps(1, end);
-  }
-}
-
-.to-bottom-animation {
-  animation: to-bottom-animation 2.5s infinite 0s;
-}
-
-@media screen and (min-width: 1600px) {
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-10%);
-    }
-    70% {
-      transform: translateY(10%);
-    }
-    100% {
-      transform: translateY(-10%);
-    }
-  }
-
-  @keyframes bounceOut {
-    0% {
-      transform: translateY(-10%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(0%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-
-  @keyframes bounceI {
-    0% {
-      transform: translateY(15%);
-    }
-    50% {
-      transform: translateY(-25%);
-    }
-    70% {
-      transform: translateY(35%);
-    }
-    100% {
-      transform: translateY(0%);
-    }
-  }
-
-  @keyframes bounceO {
-    0% {
-      transform: translateY(0%);
-    }
-    50% {
-      transform: translateY(15%);
-    }
-    70% {
-      transform: translateY(0%);
-    }
-    100% {
-      transform: translateY(15%);
-    }
-  }
-}
-
-@media screen and (max-width: 1599px) and (min-width: 1200px) {
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-70%);
-    }
-    70% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(-70%);
-    }
-  }
-
-  @keyframes bounceOut {
-    0% {
-      transform: translateY(-70%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-
-  @keyframes bounceI {
-    0% {
-      transform: translateY(20%);
-    }
-    50% {
-      transform: translateY(-105%);
-    }
-    70% {
-      transform: translateY(-60%);
-    }
-    100% {
-      transform: translateY(-85.5%);
-    }
-  }
-
-  @keyframes bounceO {
-    0% {
-      transform: translateY(-85.5%);
-    }
-    50% {
-      transform: translateY(20%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(20%);
-    }
-  }
-}
-
-@media screen and (max-width: 1199px) and (min-width: 992px) {
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-75%);
-    }
-    70% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(-75%);
-    }
-  }
-
-  @keyframes bounceOut {
-    0% {
-      transform: translateY(-75%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-
-  @keyframes bounceI {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-120%);
-    }
-    70% {
-      transform: translateY(-60%);
-    }
-    100% {
-      transform: translateY(-91.8%);
-    }
-  }
-
-  @keyframes bounceO {
-    0% {
-      transform: translateY(-91.8%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-}
-
-@media screen and (max-width: 991px) and (min-width: 768px) {
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-75%);
-    }
-    70% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(-75%);
-    }
-  }
-
-  @keyframes bounceOut {
-    0% {
-      transform: translateY(-75%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-
-  @keyframes bounceI {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-120%);
-    }
-    70% {
-      transform: translateY(-60%);
-    }
-    100% {
-      transform: translateY(-95%);
-    }
-  }
-
-  @keyframes bounceO {
-    0% {
-      transform: translateY(-95%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-}
-
-@media screen and (max-width: 767px)  {
-  @keyframes bounceIn {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-75%);
-    }
-    70% {
-      transform: translateY(-50%);
-    }
-    100% {
-      transform: translateY(-75%);
-    }
-  }
-
-  @keyframes bounceOut {
-    0% {
-      transform: translateY(-75%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-
-  @keyframes bounceI {
-    0% {
-      transform: translateY(10%);
-    }
-    50% {
-      transform: translateY(-120%);
-    }
-    70% {
-      transform: translateY(-60%);
-    }
-    100% {
-      transform: translateY(-94.25%);
-    }
-  }
-
-  @keyframes bounceO {
-    0% {
-      transform: translateY(-94.25%);
-    }
-    50% {
-      transform: translateY(10%);
-    }
-    70% {
-      transform: translateY(-10%);
-    }
-    100% {
-      transform: translateY(10%);
-    }
-  }
-}
-
-   .delay-bg-change:hover {
-    animation: bgChange  0.5s forwards;
-  }
-
-  @keyframes bgChange {
-    to {
-      background-color: #262626;
-    }
-  }
-
+/* =====================
+   Bounce on Hover (Position-based)
+   ===================== */
 .group:hover .absolute.-left-1 {
   animation: bounceIn 0.3s forwards;
 }
@@ -686,4 +166,195 @@
 }
 .group:not(:hover) .absolute.left-0 {
   animation: bounceO 0.3s forwards;
+}
+
+/* =====================
+   Media Query Responsive Bounces
+   (Uses Variables to Avoid Repetition)
+   ===================== */
+@keyframes bounceIn {
+  0% {
+    transform: translateY(var(--bounce-in-start));
+  }
+  50% {
+    transform: translateY(var(--bounce-in-mid));
+  }
+  70% {
+    transform: translateY(var(--bounce-in-mid2));
+  }
+  100% {
+    transform: translateY(var(--bounce-in-mid));
+  }
+}
+
+@keyframes bounceOut {
+  0% {
+    transform: translateY(var(--bounce-out-start));
+  }
+  50% {
+    transform: translateY(var(--bounce-out-mid));
+  }
+  70% {
+    transform: translateY(var(--bounce-out-mid2));
+  }
+  100% {
+    transform: translateY(var(--bounce-out-mid));
+  }
+}
+
+@keyframes bounceI {
+  0% {
+    transform: translateY(var(--bounce-i-start));
+  }
+  50% {
+    transform: translateY(var(--bounce-i-mid));
+  }
+  70% {
+    transform: translateY(var(--bounce-i-mid2));
+  }
+  100% {
+    transform: translateY(var(--bounce-i-mid3));
+  }
+}
+
+@keyframes bounceO {
+  0% {
+    transform: translateY(var(--bounce-o-start));
+  }
+  50% {
+    transform: translateY(var(--bounce-o-mid));
+  }
+  70% {
+    transform: translateY(var(--bounce-o-mid2));
+  }
+  100% {
+    transform: translateY(var(--bounce-o-mid));
+  }
+}
+
+/* Screen size specific bounce distances */
+@media screen and (min-width: 1600px) {
+  :root {
+    --bounce-in-start: 10%;
+    --bounce-in-mid: -10%;
+    --bounce-in-mid2: 10%;
+
+    --bounce-out-start: -10%;
+    --bounce-out-mid: 10%;
+    --bounce-out-mid2: 0%;
+
+    --bounce-i-start: 15%;
+    --bounce-i-mid: -25%;
+    --bounce-i-mid2: 35%;
+    --bounce-i-mid3: 0%;
+
+    --bounce-o-start: 0%;
+    --bounce-o-mid: 15%;
+    --bounce-o-mid2: 0%;
+  }
+}
+
+@media screen and (max-width: 1599px) and (min-width: 1200px) {
+  :root {
+    --bounce-in-start: 10%;
+    --bounce-in-mid: -70%;
+    --bounce-in-mid2: -50%;
+
+    --bounce-out-start: -70%;
+    --bounce-out-mid: 10%;
+    --bounce-out-mid2: -10%;
+
+    --bounce-i-start: 20%;
+    --bounce-i-mid: -105%;
+    --bounce-i-mid2: -60%;
+    --bounce-i-mid3: -85.5%;
+
+    --bounce-o-start: -85.5%;
+    --bounce-o-mid: 20%;
+    --bounce-o-mid2: -10%;
+  }
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  :root {
+    --bounce-in-start: 10%;
+    --bounce-in-mid: -75%;
+    --bounce-in-mid2: -50%;
+
+    --bounce-out-start: -75%;
+    --bounce-out-mid: 10%;
+    --bounce-out-mid2: -10%;
+
+    --bounce-i-start: 10%;
+    --bounce-i-mid: -120%;
+    --bounce-i-mid2: -60%;
+    --bounce-i-mid3: -91.8%;
+
+    --bounce-o-start: -91.8%;
+    --bounce-o-mid: 10%;
+    --bounce-o-mid2: -10%;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 768px) {
+  :root {
+    --bounce-in-start: 10%;
+    --bounce-in-mid: -75%;
+    --bounce-in-mid2: -50%;
+
+    --bounce-out-start: -75%;
+    --bounce-out-mid: 10%;
+    --bounce-out-mid2: -10%;
+
+    --bounce-i-start: 10%;
+    --bounce-i-mid: -120%;
+    --bounce-i-mid2: -60%;
+    --bounce-i-mid3: -95%;
+
+    --bounce-o-start: -95%;
+    --bounce-o-mid: 10%;
+    --bounce-o-mid2: -10%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    --bounce-in-start: 10%;
+    --bounce-in-mid: -75%;
+    --bounce-in-mid2: -50%;
+
+    --bounce-out-start: -75%;
+    --bounce-out-mid: 10%;
+    --bounce-out-mid2: -10%;
+
+    --bounce-i-start: 10%;
+    --bounce-i-mid: -120%;
+    --bounce-i-mid2: -60%;
+    --bounce-i-mid3: -94.25%;
+
+    --bounce-o-start: -94.25%;
+    --bounce-o-mid: 10%;
+    --bounce-o-mid2: -10%;
+  }
+
+  .to-top-animation {
+    --mid1: translateY(-5px);
+    --mid2: translateY(-3.5px);
+    --mid3: translateY(-1.5px);
+  }
+  .to-top-animation-full {
+    --mid1: translateY(-10px);
+    --mid2: translateY(-9px);
+    --mid3: translateY(-1px);
+  }
+  .to-bottom-animation {
+    --mid1: translateY(10px);
+    --mid2: translateY(9px);
+    --mid3: translateY(1px);
+  }
+  .to-right-animation {
+    --mid1: translateX(15px);
+    --mid2: translateX(14px);
+    --mid3: translateX(1.5px);
+  }
 }
