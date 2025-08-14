@@ -16,6 +16,10 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@theme {
+  --color-brand-yellow: #f9b800;
+  --color-brand-dark: #262626;
+}
 
 
 @keyframes pulseBounce {
@@ -389,16 +393,16 @@
       transform: translateY(-25%);
     }
     70% {
-      transform: translateY(15%);
+      transform: translateY(35%);
     }
     100% {
-      transform: translateY(-5%);
+      transform: translateY(0%);
     }
   }
 
   @keyframes bounceO {
     0% {
-      transform: translateY(-5%);
+      transform: translateY(0%);
     }
     50% {
       transform: translateY(15%);
@@ -454,13 +458,13 @@
       transform: translateY(-60%);
     }
     100% {
-      transform: translateY(-87%);
+      transform: translateY(-85.5%);
     }
   }
 
   @keyframes bounceO {
     0% {
-      transform: translateY(-87%);
+      transform: translateY(-85.5%);
     }
     50% {
       transform: translateY(20%);
@@ -516,13 +520,13 @@
       transform: translateY(-60%);
     }
     100% {
-      transform: translateY(-95%);
+      transform: translateY(-91.8%);
     }
   }
 
   @keyframes bounceO {
     0% {
-      transform: translateY(-95%);
+      transform: translateY(-91.8%);
     }
     50% {
       transform: translateY(10%);
@@ -585,6 +589,68 @@
   @keyframes bounceO {
     0% {
       transform: translateY(-95%);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    70% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
+  }
+}
+
+@media screen and (max-width: 767px)  {
+  @keyframes bounceIn {
+    0% {
+      transform: translateY(10%);
+    }
+    50% {
+      transform: translateY(-75%);
+    }
+    70% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(-75%);
+    }
+  }
+
+  @keyframes bounceOut {
+    0% {
+      transform: translateY(-75%);
+    }
+    50% {
+      transform: translateY(10%);
+    }
+    70% {
+      transform: translateY(-10%);
+    }
+    100% {
+      transform: translateY(10%);
+    }
+  }
+
+  @keyframes bounceI {
+    0% {
+      transform: translateY(10%);
+    }
+    50% {
+      transform: translateY(-120%);
+    }
+    70% {
+      transform: translateY(-60%);
+    }
+    100% {
+      transform: translateY(-94.25%);
+    }
+  }
+
+  @keyframes bounceO {
+    0% {
+      transform: translateY(-94.25%);
     }
     50% {
       transform: translateY(10%);
