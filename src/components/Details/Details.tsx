@@ -31,7 +31,7 @@ const Details = () => {
     };
     
     return (
-        <section className="bg-brand-yellow pt-10 xl:pb-100 md:pb-50 pb-30 lg:[clip-path:polygon(0_0%,100%_0%,100%_75%,0%_100%)] md:[clip-path:polygon(0_0%,100%_0%,100%_85%,0%_100%)] [clip-path:polygon(0_0%,100%_0%,100%_95%,0%_100%)]">
+        <section className="bg-brand-yellow pt-10 xl:pb-100 md:pb-50 pb-30 lg:[clip-path:polygon(0_0%,100%_0%,100%_65%,0%_100%)] md:[clip-path:polygon(0_0%,100%_0%,100%_85%,0%_100%)] [clip-path:polygon(0_0%,100%_0%,100%_95%,0%_100%)]">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
                     <div className="xl:ps-16 lg:ps-8 px-5 lg:order-1 order-2">
