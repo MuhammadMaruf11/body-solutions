@@ -1,7 +1,35 @@
+import { useState } from "react";
 import Button from "../ui/Button"
+import { bannerData } from "../../data/bannerData";
 
 
 const Details = () => {
+
+      // All items
+        const [items, setItems] = useState(bannerData.map((item) => item.title));
+           const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
+    
+        // Toggle selection
+        const handleSelect = (index: number) => {
+            if (selectedIndexes.includes(index)) {
+                setSelectedIndexes(selectedIndexes.filter((i) => i !== index));
+            } else {
+                setSelectedIndexes([...selectedIndexes, index]);
+            }
+        };
+    
+        // Remove non-selected items
+        const handleButtonClick = () => {
+            // Keep only selected items
+            const newItems = items.filter((_, index) => selectedIndexes.includes(index));
+    
+            // Update items
+            setItems(newItems);
+    
+            // Reset selectedIndexes to match empty array
+            setSelectedIndexes([]);
+    };
+    
     return (
         <section className="bg-brand-yellow pt-10 xl:pb-100 md:pb-50 pb-30 lg:[clip-path:polygon(0_0%,100%_0%,100%_75%,0%_100%)] md:[clip-path:polygon(0_0%,100%_0%,100%_85%,0%_100%)] [clip-path:polygon(0_0%,100%_0%,100%_95%,0%_100%)]">
             <div className="container mx-auto">
@@ -10,38 +38,29 @@ const Details = () => {
                         <h4 className="2xl:text-5xl text-4xl 2xl:leading-15 leading-12 2xl:mb-15 xl:mb-10 mb-7.5">Cursus Integer <br />
                             consequat <br className="md:hidden" /> Tristique.</h4>
                         <ul className="flex flex-wrap gap-3.5 2xl:mb-15 mb-10 2xl:text-xl xl:text-xl lg:text-base">
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 md:pe-3 pe-6 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span className="hidden md:block">Ac viverra sed risus praesent vulputate. </span>
-                                <span className="md:hidden">Cursus Integer. </span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 md:pe-3 pe-6 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Natoqu consectetur pulvinar. </span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 md:pe-3 pe-6 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span className="hidden md:block">Sollicitudin ornare tempus nulla varius pulvinar.</span>
-                                <span className="md:hidden">Tellus Euismod Pellentesque.</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 md:pe-3 pe-6 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Varius pulvinar</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 md:pe-3 pe-6 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Natoque id tellus consectetur</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 md:pe-3 pe-6 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Vulputate et vulputate suspendisse</span>
-                            </li>
+                            {items.map((item, index) => (
+                                <li
+                                    key={index}
+                                    onClick={() => handleSelect(index)}
+                                    className={`flex items-center gap-2 ps-3 xl:pe-6 pe-3 py-3 rounded-full cursor-pointer
+                    ${selectedIndexes.includes(index) ? "bg-brand-dark text-white" : "bg-white"}`}
+                                >
+                                    <img
+                                        className="xl:w-6.5 lg:w-5"
+                                        src="/img/icons/check_circle.svg"
+                                        alt="icon"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
                         </ul>
                         <Button
+                            disabled={selectedIndexes.length === 0}
                             label="Lorem Ipsum"
                             bgColor="#262626"
                             textColor="#fff"
-                            shadowColor="#fff"
+                            shadowColor="#262626"
+                            onclick={handleButtonClick}
                         />
                     </div>
                     <div className="relative lg:order2 order-1">

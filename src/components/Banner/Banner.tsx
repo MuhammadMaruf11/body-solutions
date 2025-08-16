@@ -1,64 +1,95 @@
-import { useEffect, useRef } from "react";
-import Button from "../ui/Button"
+import { useEffect, useRef, useState } from "react";
+import Button from "../ui/Button";
 import Typed from "typed.js";
-
+import { bannerData } from "../../data/bannerData";
 
 const Banner = () => {
-
-    const el = useRef(null);
+    const el = useRef<HTMLSpanElement | null>(null);
 
     useEffect(() => {
-        new Typed(el.current, {
-            strings: ['Tristique.'],
+        const typed = new Typed(el.current!, {
+            strings: ["Tristique."],
             typeSpeed: 50,
             loop: true,
             backSpeed: 50,
             startDelay: 1000,
         });
-        return () => { };
+
+        return () => {
+            typed.destroy();
+        };
     }, []);
+
+    // All items
+    const [items, setItems] = useState(bannerData.map((item) => item.title));
+       const [selectedIndexes, setSelectedIndexes] = useState<number[]>([]);
+
+    // Toggle selection
+    const handleSelect = (index: number) => {
+        if (selectedIndexes.includes(index)) {
+            setSelectedIndexes(selectedIndexes.filter((i) => i !== index));
+        } else {
+            setSelectedIndexes([...selectedIndexes, index]);
+        }
+    };
+
+    // Remove non-selected items
+    const handleButtonClick = () => {
+        // Keep only selected items
+        const newItems = items.filter((_, index) => selectedIndexes.includes(index));
+
+        // Update items
+        setItems(newItems);
+
+        // Reset selectedIndexes to match empty array
+        setSelectedIndexes([]);
+    };
+
 
     return (
         <section className="px-3 md:py-0 pb-10">
             <div className="container mx-auto">
                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-6 items-center">
                     <div className="xl:ps-16 lg:ps-8 ps-2 order-2 lg:order-1">
-                        <h5 className="text-brand-yellow uppercase 2xl:text-3xl lg:text-2xl md:text-3xl text-lg font-bold md:mb-0 mb-1">risus praesent vulputate. </h5>
-                        <h1 className="2xl:text-7xl xl:text-6xl lg:text-4xl md:text-5xl text-4xl font-bold 2xl:leading-20 xl:leading-16 lg:leading-12 md:leading-16 leading-10 xl:mb-15 lg:mb-6 md:mb-10 mb-7.5">Cursus Integer <br />
-                            Consequat  <span ref={el} /></h1>
-                        <ul className="flex flex-wrap xl:gap-3.5 lg:gap-2 gap-3.5 xL:mb-15 md:mb-10 mb-7.5 2xl:text-xl xl:text-lg lg:text-base md:text-lg">
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 pe-3 py-3 rounded-full">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Cursus Integer</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 pe-3 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Integer Consequat </span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 pe-3 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Tellus Euismod Pellentesque</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 pe-3 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Aliquot Tristique</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 pe-3 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Pellentesque Tempus</span>
-                            </li>
-                            <li className="flex items-center gap-2 bg-white ps-3 xl:pe-6 pe-3 py-3 rounded-full ">
-                                <img className="xl:w-6.5 lg:w-5" src="/img/icons/check_circle.svg" alt="icon" />
-                                <span>Mauris Fermentum Praesent</span>
-                            </li>
+                        <h5 className="text-brand-yellow uppercase 2xl:text-3xl lg:text-2xl md:text-3xl text-lg font-bold md:mb-0 mb-1">
+                            risus praesent vulputate.
+                        </h5>
+                        <h1 className="2xl:text-7xl xl:text-6xl lg:text-4xl md:text-5xl text-4xl font-bold 2xl:leading-20 xl:leading-16 lg:leading-12 md:leading-16 leading-10 xl:mb-15 lg:mb-6 md:mb-10 mb-7.5">
+                            Cursus Integer <br />
+                            Consequat <span ref={el} />
+                        </h1>
+
+                        <ul
+                            id="bannerList"
+                            className="flex flex-wrap xl:gap-3.5 lg:gap-2 gap-3.5 xL:mb-15 md:mb-10 mb-7.5 2xl:text-xl xl:text-lg lg:text-base md:text-lg"
+                        >
+                            {items.map((item, index) => (
+                                <li
+                                    key={index}
+                                    onClick={() => handleSelect(index)}
+                                    className={`flex items-center gap-2 ps-3 xl:pe-6 pe-3 py-3 rounded-full cursor-pointer
+                    ${selectedIndexes.includes(index) ? "bg-brand-dark text-white" : "bg-white"}`}
+                                >
+                                    <img
+                                        className="xl:w-6.5 lg:w-5"
+                                        src="/img/icons/check_circle.svg"
+                                        alt="icon"
+                                    />
+                                    <span>{item}</span>
+                                </li>
+                            ))}
                         </ul>
+
                         <Button
+                            disabled={selectedIndexes.length === 0}
                             label="Lorem Ipsum"
                             bgColor="#f9b800"
                             textColor="#262626"
                             shadowColor="#262626"
+                            onclick={handleButtonClick}
                         />
                     </div>
+
                     <div className="relative order-1 lg:order-2">
                         <div className="relative w-full h-full z-1">
                             <img src="/img/banner/banner-bg.png" alt="banner" className="w-full" />
@@ -109,7 +140,7 @@ const Banner = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Banner
+export default Banner;
